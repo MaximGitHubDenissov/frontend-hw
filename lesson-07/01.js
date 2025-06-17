@@ -39,6 +39,6 @@ let currentIndex = 0;
     updateImage();
   });
 
-  updateImage();
+  // updateImage();
 
  
