@@ -44,6 +44,10 @@ for (let i = 0; i < PETS.length; i++) {
   petButtonElement.classList.add('pet')
   petButtonElement.id = pet.id
   petButtonElement.textContent = pet.title
+  petButtonElement.addEventListener("click", function(){
+    addToCart(pet.id)
+  }
+)
 
   petShop.append(petButtonElement)
 }
@@ -64,7 +68,17 @@ function updateCartDisplay() {
 
 clearCartButton.addEventListener('click', function () {
   cart.length = 0
+  messageBox.textContent = ''
   updateCartDisplay()
 })
 
 // Твой код:
+function addToCart(id){
+    if (cart.length > 2){
+      messageBox.textContent = 'Вы не можете добавить более 3 питомцев'
+    }
+    else{
+      cart.push(id)
+      updateCartDisplay()
+    }
+  }
